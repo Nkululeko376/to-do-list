@@ -18,14 +18,26 @@ button.addEventListener('click', () => {
         newMessage.appendChild(span);
     }
     textbox.value = '';
+    saveToDoTask();
 });
 
 
 messages.addEventListener('click', (list) => {
     if( list.target.tagName === 'LI' ){
        list.target.classList.toggle('checked');
+       saveToDoTask();
     }
     else if( list.target.tagName === 'SPAN' ){
         list.target.parentElement.remove();
+        saveToDoTask();
     }
 }, false);
+
+function saveToDoTask(){
+    localStorage.setItem('task', messages.innerHTML);
+}
+
+function getSavedToDoTask(){
+    messages.innerHTML = localStorage.getItem('task');
+}
+getSavedToDoTask();
