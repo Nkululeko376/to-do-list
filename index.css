@@ -1,21 +1,100 @@
 
 body {
     padding: 0px;
+    margin-bottom: 0px;
     margin-top: 100px;
     font-family: monospace;
     background-color: black;
 }
 
-.card {
-    width: 400px;
+header {
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, cyan, red, yellow, blue, black, green, white, teal, blueviolet);
+    animation: bg-color 2s alternate-reverse infinite;
+}
+
+@keyframes bg-color{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+footer {
+    height: 50px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, cyan, red, yellow, blue, black, green, white, teal, blueviolet);
+    animation: bg-color 2s alternate-reverse infinite;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 
+.profile-pic {
+    width: 250px;
+    margin: 0px auto -25px;
+    animation: expand 0.8s alternate-reverse infinite;
+}
+
+@keyframes expand{
+    100% {
+        transform: scale(0.98, 0.98);
+    }
+}
+
+.image {
+    width: 80%;
     margin: auto;
-    padding: 10px;
+}
+
+.image img {
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 60%;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 60%;
+    filter: grayscale(100%);
+}
+
+.image img:hover {
+    filter: grayscale(0%);
+}
+
+.my-name {
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px cyan;
+} */
+
+.card {
+    width: 75%;
+    margin: auto;
+    padding: 6px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px  cyan;
-    /* Breaks long words to avoid overflow */
+    /* Breaks long words to avoid overflow*/
     word-wrap: break-word;
-    /* Same as word-wrap, for better compatibility */
+    /* Same as word-wrap, for better compatibility*/
     overflow-wrap: break-word;
+    z-index: 3px;
+    background: url(pic/pic20.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: grayscale(100%);
+    
 }
 
 .heading1 {
@@ -23,20 +102,28 @@ body {
     margin: auto;
     width: 180px;
     text-shadow: 2px 2px 3px cyan;
+    z-index: 3;
 }
 
 .container {
-    padding: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.408);
+    border-radius: 8px;
 }
 
 .top-sec {
     display: flex;
     padding: 3px;
-    margin-bottom: 0px;
+    width: 100%;
 }
 
 .top-sec input {
     flex: 1;
+    min-width: 0px;
     border: 3px solid cyan;
     padding: 8px 12px;
     font-size: 17px;
@@ -138,17 +225,21 @@ ul li span:hover {
     background-color: rgb(0, 152, 152);
 }
 
+@media(max-width: 560px){
+    .card {
+        width: 95%;
+    }
+}
 
 
 @media (max-width: 450px) {
-    body {
+    /* body {
         background-color: blue;
-    }
+    } */
 
     .card {
-        width: 400px;
-        padding: 2px;
-        border: 5px solid red;
+        width: 95%;
+        /* border: 5px solid red; */
     }
 
     ul li {
@@ -161,5 +252,38 @@ ul li span:hover {
         margin-bottom: 18px;
         font-size: 15px;
         
+    }
+
+    .container {
+        padding: 0px;
+        width: 99%;
+    }
+
+    .top-sec {
+        padding: 0px;
+        width: 90%;
+    }
+
+
+    .top-sec input {
+        flex: 1;
+        border: 3px solid cyan;
+        padding: 5px 8px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 13px;
+        color: cyan;
+    }
+
+    .top-sec button {
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 0px 15px;
+    border: none;
+    background-color: cyan;
+    border-radius: 13px;
+    margin-left: -28px;
+    color: white;
     }
   }
